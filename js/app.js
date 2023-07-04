@@ -13,6 +13,37 @@
             document.documentElement.classList.add(className);
         }));
     }
+    let isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+        }
+    };
+    function fullVHfix() {
+        const fullScreens = document.querySelectorAll("[data-fullscreen]");
+        if (fullScreens.length && isMobile.any()) {
+            window.addEventListener("resize", fixHeight);
+            function fixHeight() {
+                let vh = window.innerHeight * .01;
+                document.documentElement.style.setProperty("--vh", `${vh}px`);
+            }
+            fixHeight();
+        }
+    }
     let bodyLockStatus = true;
     let bodyLockToggle = (delay = 500) => {
         if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
@@ -3351,6 +3382,7 @@
             spaceBetween: 0,
             autoHeight: false,
             speed: 800,
+            direction: "vertical",
             mousewheel: {
                 eventsTarget: ".swiper",
                 sensitivity: 100,
@@ -3506,6 +3538,34 @@
         function removeActiveClass() {
             document.documentElement.classList.contains("_header-visible") ? document.documentElement.classList.remove("_header-visible") : 0;
         }
+        function mobileScroll() {
+            function scrollDown() {
+                removeActiveClass();
+            }
+            function scrollUp() {
+                addActiveClass();
+                makeTransparentHeader();
+            }
+            function getScrollDirection() {
+                let scrollDirection = 0;
+                let startPosition;
+                let endPosition;
+                document.addEventListener("touchstart", (e => {
+                    startPosition = e.changedTouches[0].screenY;
+                }));
+                document.addEventListener("touchend", (e => {
+                    endPosition = e.changedTouches[0].screenY;
+                    if (endPosition - startPosition > 30) {
+                        scrollDirection = "up";
+                        scrollUp();
+                    } else if (endPosition - startPosition < -30) {
+                        scrollDirection = "down";
+                        scrollDown();
+                    } else scrollDirection = 0;
+                }));
+            }
+            getScrollDirection();
+        }
         document.addEventListener("mousewheel", (e => {
             const isFirstSlide = firstSlideIsActive();
             if (e.deltaY > 0) removeActiveClass(); else if (e.deltaY < 0 && isFirstSlide) {
@@ -3523,6 +3583,7 @@
             const isFirstSlide = firstSlideIsActive();
             if (!isFirstSlide) removeActiveClass();
         }));
+        mobileScroll();
     }
     function manipulateFooter() {
         document.querySelector("._footer-open");
@@ -3549,5 +3610,6 @@
     window["FLS"] = true;
     isWebp();
     menuInit();
+    fullVHfix();
     headerScroll();
 })();
