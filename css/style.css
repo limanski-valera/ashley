@@ -226,6 +226,7 @@ textarea.input {
 
 .page {
   height: 100vh;
+  overflow: hidden;
 }
 
 .page__section-01 {
@@ -265,7 +266,7 @@ textarea.input {
 .section:last-child ._footer-open {
   content: "";
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -1240,6 +1241,30 @@ textarea.input {
 }
 
 @media (max-width: 47.99875em) {
+  .page__section-01 {
+    padding: 3.125rem 0;
+  }
+
+  .page__section-02 {
+    padding: 3.125rem 0;
+  }
+
+  .page__section-04 {
+    padding: 1.875rem 0 3.125rem;
+  }
+
+  .page__section-05 {
+    padding: 3.125rem 0;
+  }
+
+  .page__section-07 {
+    padding: 3.125rem 0;
+  }
+
+  .page__section-08 {
+    padding: 3.125rem 0;
+  }
+
   .simple-section {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1324,7 +1349,7 @@ textarea.input {
   }
 
   .section-03__product-ibg {
-    padding: 0.9375rem 0.9375rem 0.9375rem 1.5625rem;
+    padding: 0.9375rem 0.9375rem 2.5rem 1.5625rem;
   }
 
   .section-03__label-product {
