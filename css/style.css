@@ -318,13 +318,13 @@ textarea.input {
 .title {
   font-size: 1.5625rem;
   line-height: 1.28;
-  letter-spacing: 2%;
+  letter-spacing: 0.5px;
   /* 0.5/25 */
 }
 
 .text {
   line-height: 1.1875;
-  letter-spacing: 3.125%;
+  letter-spacing: 0.5px;
   /* 0.5/16 */
 }
 
@@ -333,7 +333,7 @@ textarea.input {
   position: relative;
   font-size: 0.75rem;
   line-height: 1.5833333333;
-  letter-spacing: 10%;
+  letter-spacing: 0.5px;
   /* 1.2/12 */
   text-transform: uppercase;
 }
@@ -374,7 +374,7 @@ textarea.input {
 .simple-section__label {
   font-size: 0.9375rem;
   line-height: 1.2666666667;
-  letter-spacing: 3.333333%;
+  letter-spacing: 0.5px;
   /* 0.5/15 */
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -694,7 +694,7 @@ textarea.input {
 .footer__text {
   font-size: 0.875rem;
   line-height: 1.3571428571;
-  letter-spacing: 0.03125rem;
+  letter-spacing: 0.5px;
   gap: 1.875rem;
 }
 
@@ -708,7 +708,7 @@ textarea.input {
   font-size: 0.75rem;
   line-height: 1.5833333333;
   text-transform: uppercase;
-  letter-spacing: 10%;
+  letter-spacing: 0.5px;
   /* 1.2/12 */
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
@@ -892,7 +892,7 @@ textarea.input {
   position: relative;
   font-size: 0.75rem;
   line-height: 1.5833333333;
-  letter-spacing: 10%;
+  letter-spacing: 0.5px;
   /* 1.2/12 */
   text-transform: uppercase;
   z-index: 2;
@@ -988,7 +988,7 @@ textarea.input {
 .section-04__sub-title {
   font-size: 0.9375rem;
   line-height: 1.2666666667;
-  letter-spacing: 3.333333%;
+  letter-spacing: 0.5px;
   /* 0.5/15 */
 }
 
@@ -999,7 +999,7 @@ textarea.input {
 .section-04__title {
   font-size: 1.75rem;
   line-height: 1.1428571429;
-  letter-spacing: 1.785714%;
+  letter-spacing: 0.5px;
   /* 0.5/28 */
   max-width: 14.6875rem;
 }
@@ -1011,7 +1011,7 @@ textarea.input {
 .section-04__text {
   font-size: 1rem;
   line-height: 1.1875;
-  letter-spacing: 0.03125rem;
+  letter-spacing: 0.5px;
 }
 
 .section-04__text:not(:last-child) {
@@ -1064,7 +1064,7 @@ textarea.input {
 .section-06__sub-title {
   font-size: 0.9375rem;
   line-height: 1.2666666667;
-  letter-spacing: 3.333333%;
+  letter-spacing: 0.5px;
   /* 0.5/15 */
 }
 
@@ -1075,7 +1075,7 @@ textarea.input {
 .section-06__title {
   font-size: 1.5625rem;
   line-height: 1.28;
-  letter-spacing: 2%;
+  letter-spacing: 0.5px;
   /* 0.5/25 */
 }
 
@@ -1085,7 +1085,7 @@ textarea.input {
 
 .section-06__text {
   line-height: 1.1875;
-  letter-spacing: 3.125%;
+  letter-spacing: 0.5px;
   /* 0.5/16 */
 }
 
