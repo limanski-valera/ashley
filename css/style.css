@@ -256,6 +256,7 @@ textarea.input {
 .section {
   overflow-y: auto;
   visibility: hidden;
+  overflow-x: hidden;
 }
 
 .section.swiper-slide-active {
